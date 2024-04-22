@@ -8,9 +8,9 @@ namespace VapeShop.Domain.ECommerce
 {
     public class HistoryOfOrders
     {
-        public int StoreId { get; set; }
+        public int HistoryOfOrdersId { get; set; }
 
-        public string StoreName { get; set; } = null!;
+        public string HistoryOfOrdersName { get; set; } = null!;
 
         public virtual ICollection<Purchase> Purchases { get; set; } = new List<Purchase>();
     }
