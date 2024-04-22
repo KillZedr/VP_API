@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VapeShop.Domain.ECommerce
 {
-    public class Store
+    public class HistoryOfOrders
     {
         public int StoreId { get; set; }
 
