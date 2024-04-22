@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "fi31AvbPxBKL1YTd3IOJzuLa7tLxn0ltSs56FUjjm8clsCSVwl8+rxQNEpVp902wGOhN1nXoSa6zOu7mXTYxXQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Илья\\Desktop\\ASP.Net  courses\\homework\\Homework1_SOLID\\ISP_SOlID\\VapeShop_API\\VapeShop_API\\VapeShop_API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Илья\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Илья\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Илья\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\Илья\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\Илья\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\Илья\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VapeShop_API", "VapeShop_API\VapeShop_API.csproj", "{E888BE34-09BF-4D30-B803-6C8ECD5331F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7A8C041B-E454-4438-88F7-FC66621AA530}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{4E6D4128-EE69-4E27-B280-A1DE60C40278}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{926E5FF6-CBC4-42A8-87E7-E48CDF36F5C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7F137FE5-BABB-4C72-8DEB-726B19E9251F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VapeShop.Domain", "VapeShop.Domain\VapeShop.Domain.csproj", "{6704FD82-C674-4600-BBCF-00320D78D787}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E888BE34-09BF-4D30-B803-6C8ECD5331F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E888BE34-09BF-4D30-B803-6C8ECD5331F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E888BE34-09BF-4D30-B803-6C8ECD5331F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E888BE34-09BF-4D30-B803-6C8ECD5331F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6704FD82-C674-4600-BBCF-00320D78D787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6704FD82-C674-4600-BBCF-00320D78D787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6704FD82-C674-4600-BBCF-00320D78D787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6704FD82-C674-4600-BBCF-00320D78D787}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E888BE34-09BF-4D30-B803-6C8ECD5331F2} = {926E5FF6-CBC4-42A8-87E7-E48CDF36F5C2}
+		{6704FD82-C674-4600-BBCF-00320D78D787} = {7A8C041B-E454-4438-88F7-FC66621AA530}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB62BBE1-C44F-4776-B7ED-958E998EFD6F}
+	EndGlobalSection
+EndGlobal
