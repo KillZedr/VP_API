@@ -21,6 +21,6 @@ namespace VapeShop.Domain.ECommerce
 
         public virtual Product Product { get; set; } = null!;
 
-        public virtual Store? Store { get; set; }
+        public virtual HistoryOfOrders? Store { get; set; }
     }
 }
