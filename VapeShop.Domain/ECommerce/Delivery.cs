@@ -13,7 +13,7 @@ namespace VapeShop.Domain.ECommerce
     {
         public required int ProductId { get; set; }
 
-        public required int? StoreId { get; set; }
+        public required int? HistoryOfOrdersId { get; set; }
 
         public required DateOnly DeliveryDate { get; set; }
 
@@ -21,6 +21,6 @@ namespace VapeShop.Domain.ECommerce
 
         public virtual Product Product { get; set; } = null!;
 
-        public virtual HistoryOfOrders? Store { get; set; }
+        public virtual HistoryOfOrders? HistoryOfOrders { get; set; }
     }
 }

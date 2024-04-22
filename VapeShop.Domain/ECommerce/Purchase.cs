@@ -14,13 +14,13 @@ namespace VapeShop.Domain.ECommerce
 
         public int UsersId { get; set; }
 
-        public int StoreId { get; set; }
+        public int HistoryOfOrdersId { get; set; }
 
         public DateTime PurchaseDate { get; set; }
 
         public virtual ICollection<PurchaseItem> PurchaseItems { get; set; } = new List<PurchaseItem>();
 
-        public virtual Store Store { get; set; } = null!;
+        public virtual HistoryOfOrders HistoryOfOrders { get; set; } = null!;
 
         public virtual User Users { get; set; } = null!;
     }
