@@ -1,0 +1,7 @@
+*.Production.json
+*.csproj.user
+
+**/bin/
+**/obj/
+**/.vs/
+**/log.txt
