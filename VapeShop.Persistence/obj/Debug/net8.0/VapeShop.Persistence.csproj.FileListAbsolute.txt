@@ -1,0 +1,6 @@
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Persistence\obj\Debug\net8.0\VapeShop.Persistence.csproj.AssemblyReference.cache
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Persistence\obj\Debug\net8.0\VapeShop.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Persistence\obj\Debug\net8.0\VapeShop.Persistence.AssemblyInfoInputs.cache
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Persistence\obj\Debug\net8.0\VapeShop.Persistence.AssemblyInfo.cs
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Persistence\obj\Debug\net8.0\VapeShop.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Persistence\obj\Debug\net8.0\VapeShop.Persistence.sourcelink.json

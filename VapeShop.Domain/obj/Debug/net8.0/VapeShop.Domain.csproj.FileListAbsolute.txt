@@ -1,0 +1,12 @@
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\bin\Debug\net8.0\VapeShop.Domain.deps.json
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\bin\Debug\net8.0\VapeShop.Domain.dll
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\bin\Debug\net8.0\VapeShop.Domain.pdb
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\obj\Debug\net8.0\VapeShop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\obj\Debug\net8.0\VapeShop.Domain.AssemblyInfoInputs.cache
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\obj\Debug\net8.0\VapeShop.Domain.AssemblyInfo.cs
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\obj\Debug\net8.0\VapeShop.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\obj\Debug\net8.0\VapeShop.Domain.sourcelink.json
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\obj\Debug\net8.0\VapeShop.Domain.dll
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\obj\Debug\net8.0\refint\VapeShop.Domain.dll
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\obj\Debug\net8.0\VapeShop.Domain.pdb
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Domain\obj\Debug\net8.0\ref\VapeShop.Domain.dll

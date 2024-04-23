@@ -14,6 +14,10 @@ namespace VapeShop_API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            Startup.RegisterDal(builder);
+            Startup.AddSerilog(builder);
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

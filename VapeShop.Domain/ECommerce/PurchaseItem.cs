@@ -7,11 +7,9 @@ using VapeShop.Domain.VSProduct;
 
 namespace VapeShop.Domain.ECommerce
 {
-    public class PurchaseItem
+    public class PurchaseItem : Entity<int>
     {
-        public int PurchaseId { get; set; }
-
-        public int ProductId { get; set; }
+  
 
         public int ProductCount { get; set; }
 

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace VapeShop.Domain.VSProduct
 {
-    public class Manufacturer
+    public class Manufacturer : Entity<int>
     {
-        public required int ManufacturerId { get; set; }
+        
 
         public required string ManufacturerName { get; set; } = null!;
 

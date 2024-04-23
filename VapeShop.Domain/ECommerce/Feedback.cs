@@ -7,9 +7,9 @@ using VapeShop.Domain.VSProduct;
 
 namespace VapeShop.Domain.ECommerce
 {
-    internal class Feedback
+    public class Feedback : Entity<int>
     {
-        public required Delivery Order { get; set; }
+        public required Order Order { get; set; }
         public required Product Product { get; set; }
         public required int Rating { get; set; }
         public required string Message { get; set; }

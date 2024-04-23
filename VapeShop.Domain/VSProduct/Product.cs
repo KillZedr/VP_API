@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace VapeShop.Domain.VSProduct
 {
-    public class Product
+    public class Product : Entity<int>
     {
-        public int ProductId { get; set; }
-
-        public string ProductName { get; set; } = null!;
-
-        public int? ManufacturerId { get; set; }
-
-        public int? CategoryId { get; set; }
+        public required string Name { get; set; }
+        public required string Description { get; set; }
+        public required string PicturePath { get; set; }
 
         public virtual ICollection<PriceChange> PriceChanges { get; set; } = new List<PriceChange>();
 

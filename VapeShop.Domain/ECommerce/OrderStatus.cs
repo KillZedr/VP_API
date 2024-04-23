@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VapeShop.Domain.ECommerce
 {
-    public enum DeliveryStatus
+    public enum OrderStatus
     {
         Placed = 1,
         Paid = 2,

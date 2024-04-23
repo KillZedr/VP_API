@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\VapeShop_API.props" />
+</Project>
