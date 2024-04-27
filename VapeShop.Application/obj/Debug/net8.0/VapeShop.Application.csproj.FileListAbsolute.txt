@@ -14,3 +14,5 @@ C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\Va
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Application\obj\Debug\net8.0\refint\VapeShop.Application.dll
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Application\obj\Debug\net8.0\VapeShop.Application.pdb
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Application\obj\Debug\net8.0\ref\VapeShop.Application.dll
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Application\bin\Debug\net8.0\VapeShop.Application.runtimeconfig.json
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop.Application\obj\Debug\net8.0\VapeShop.Application.genruntimeconfig.cache

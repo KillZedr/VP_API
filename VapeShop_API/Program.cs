@@ -18,8 +18,12 @@ namespace VapeShop_API
             Startup.AddSerilog(builder);
 
 
+
+
+
             var app = builder.Build();
 
+            DbInitializer.InitializeDB(app.Services);
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

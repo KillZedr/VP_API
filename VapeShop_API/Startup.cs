@@ -6,14 +6,14 @@ using System.Data.Common;
 using VapeShop.Application.VapeShop_DAL.Interfaces;
 using VapeShop.Application.VapeShop_DAL.RealisationInterfaces;
 using Microsoft.Extensions.Options;
+using VapeShop.Application;
 
 
 namespace VapeShop_API
 {
     public static class Startup
     {
-
-
+ 
 
         public static void RegisterDal(WebApplicationBuilder builder)
         {
@@ -54,6 +54,38 @@ namespace VapeShop_API
             var logger = loggerConfig.CreateLogger();
             builder.Services.AddSingleton<ILogger>(logger);
         }
+
+
+       /* private static void MigrateDb();*/
+
+       /* private static bool TestConnection(IServiceCollection services)
+        {
+            var provider = services.BuildServiceProvider();
+            var logger = provider.GetRequiredService<ILogger>();
+            logger.Information("Test the DB connection... ");
+
+            var context = provider.GetRequiredService<DbContext>();
+            try
+            {
+                var createdAnew = context.Database.EnsureCreated();
+                if (createdAnew)
+                {
+                    logger.Information("Successfully created the Db");
+                }
+                else
+                {
+                    logger.Information("The Db is already there");
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Information("EnsureCreated failed");
+                logger.Information(ex.ToString());
+                return false;
+            }
+            return true;*/
+      /*  }*/
+
 
     }
 }

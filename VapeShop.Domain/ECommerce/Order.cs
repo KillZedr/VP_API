@@ -17,9 +17,11 @@ namespace VapeShop.Domain.ECommerce
 
         public required DateOnly DeliveryDate { get; set; }
         public decimal ProductCount { get; set; }
-        public virtual Product Product { get; set; } = null!;
+        public required Product Product { get; set; } = null!;
         public required OrderStatus Status { get; set; }
-        
+
+        /*public virtual required ICollection<Product> Products { get; set;}
+        */
 
         
     }

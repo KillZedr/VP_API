@@ -11,6 +11,7 @@
         public required string PasswordSalt { get; set; }
 
         public required UserRole Role { get; set; }
+        public required UserSettings UserSettings { get; set; }
 
 
         public string FullName

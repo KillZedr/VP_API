@@ -15,8 +15,8 @@ namespace VapeShop.Domain.ECommerce
 
         public decimal ProductPrice { get; set; }
 
-        public virtual Product Product { get; set; } = null!;
+        public required Product Product { get; set; } = null!;
 
-        public virtual Purchase Purchase { get; set; } = null!;
+        public required Purchase Purchase { get; set; } = null!;
     }
 }

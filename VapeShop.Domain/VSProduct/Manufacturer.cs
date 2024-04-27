@@ -12,6 +12,6 @@ namespace VapeShop.Domain.VSProduct
 
         public required string ManufacturerName { get; set; } = null!;
 
-        public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+        public virtual ICollection<Product>? Products { get; set; } = new List<Product>();
     }
 }

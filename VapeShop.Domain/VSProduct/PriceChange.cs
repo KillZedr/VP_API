@@ -13,6 +13,6 @@ namespace VapeShop.Domain.VSProduct
 
         public decimal NewPrice { get; set; }
 
-        public virtual Product Product { get; set; } = null!;
+        public virtual required  Product? Product { get; set; }
     }
 }
