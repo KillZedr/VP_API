@@ -1,91 +1,90 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Serilog;
-using ILogger = Serilog.ILogger;
-using System.Data.Common;
-using VapeShop.Application.VapeShop_DAL.Interfaces;
-using VapeShop.Application.VapeShop_DAL.RealisationInterfaces;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Options;
-using VapeShop.Application;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using VapeShop_API.Middleware;
 
 
 namespace VapeShop_API
 {
-    public static class Startup
+    public class Startup
     {
- 
+        public IConfiguration Configuration { get; }
 
-        public static void RegisterDal(WebApplicationBuilder builder)
+        public Startup(IConfiguration configuration) => Configuration = configuration;
+
+        public void ConfigureServices(IServiceCollection services)
         {
+            
 
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            
+            services.AddControllers();
 
-
-            builder.Services.AddTransient(provider =>
+            services.AddCors(options =>
             {
-                var builder = new DbContextOptionsBuilder<VapeShop_DbContext>();
-                builder.UseSqlServer(connectionString);
-                return builder.Options;
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyHeader();
+                    policy.AllowAnyMethod();
+                    policy.AllowAnyOrigin();
+                });
             });
-            builder.Services.AddScoped<DbContext, VapeShop_DbContext>();
-            builder.Services.AddScoped<IUnitOfWork>(provider =>
+
+            services.AddAuthentication(config =>
             {
-                var context = provider.GetRequiredService<DbContext>();
-                return new UnitOfWork(context);
-            });
+                config.DefaultAuthenticateScheme =
+                    JwtBearerDefaults.AuthenticationScheme;
+                config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer("Bearer", options =>
+                {
+                    options.Authority = "http://localhost:5170";
+                    options.Audience = "VapeShopAPI";
+                    options.RequireHttpsMetadata = false;
+                });
+            services.AddVersionedApiExplorer(options =>
+                options.GroupNameFormat = "'v'VVV");
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>,
+                    ConfigureSwaggerOptions>();
+            services.AddSwaggerGen();
+            services.AddApiVersioning();
+
+          
+
+            /*services.AddSingleton<ICurrentUserService, CurrentUserService>();
+            services.AddHttpContextAccessor();*/
         }
 
-
-
-        internal static void AddSerilog(WebApplicationBuilder builder)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+            IApiVersionDescriptionProvider provider)
         {
-            var loggerConfig = new LoggerConfiguration()
-                .WriteTo.Console()
-                .WriteTo.File("log.txt", rollingInterval: RollingInterval.Month,
-                    outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}");
-            if (builder.Environment.IsDevelopment())
+            if (env.IsDevelopment())
             {
-                loggerConfig = loggerConfig.MinimumLevel.Debug();
+                app.UseDeveloperExceptionPage();
             }
-            else
+            app.UseSwagger();
+            app.UseSwaggerUI(config =>
             {
-                loggerConfig = loggerConfig.MinimumLevel.Warning();
-            }
-            var logger = loggerConfig.CreateLogger();
-            builder.Services.AddSingleton<ILogger>(logger);
+                foreach (var description in provider.ApiVersionDescriptions)
+                {
+                    /*config.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.ApiVersion.ToString());*/
+                    config.SwaggerEndpoint(
+                        $"/swagger/{description.GroupName}/swagger.json",
+                        description.GroupName.ToUpperInvariant());
+                    config.RoutePrefix = string.Empty;
+                }
+            });
+            app.UseCustomExceptionHandler();
+            app.UseRouting();
+            app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseApiVersioning();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
-
-
-       /* private static void MigrateDb();*/
-
-       /* private static bool TestConnection(IServiceCollection services)
-        {
-            var provider = services.BuildServiceProvider();
-            var logger = provider.GetRequiredService<ILogger>();
-            logger.Information("Test the DB connection... ");
-
-            var context = provider.GetRequiredService<DbContext>();
-            try
-            {
-                var createdAnew = context.Database.EnsureCreated();
-                if (createdAnew)
-                {
-                    logger.Information("Successfully created the Db");
-                }
-                else
-                {
-                    logger.Information("The Db is already there");
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Information("EnsureCreated failed");
-                logger.Information(ex.ToString());
-                return false;
-            }
-            return true;*/
-      /*  }*/
-
-
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using VapeShop.Application.VapeShop_DAL.Interfaces;
@@ -33,9 +34,28 @@ namespace VapeShop.Application.VapeShop_DAL.RealisationInterfaces
             return _dbSet.Add(entity).Entity;
         }
 
+        public TEntity Update(TEntity entity)
+        {
+            return _dbSet.Update(entity).Entity;
+        }
+        
+
         public TEntity Delete(TEntity entity)
         {
             return _dbSet.Remove(entity).Entity;
+        }
+        public async Task<TEntity> InsertOrUpdate(
+           Expression<Func<TEntity, bool>> predicate,
+           TEntity entity
+       )
+        {
+            var entityExists = await _dbSet.AnyAsync(predicate);
+            if (entityExists)
+            {
+                return _dbSet.Update(entity).Entity;
+            }
+
+            return _dbSet.Add(entity).Entity;
         }
     }
 }

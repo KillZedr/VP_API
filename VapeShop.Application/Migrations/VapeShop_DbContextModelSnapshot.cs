@@ -22,6 +22,170 @@ namespace VapeShop.Application.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Basket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("Basket");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Feedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ManagerComment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PicturePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Feedback");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Payment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MetaData")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PurchaseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Source")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PurchaseId")
+                        .IsUnique();
+
+                    b.ToTable("Payment");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.ProductInBasket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BasketId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BasketId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductInBasket");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Purchase", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("PurchaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UsersId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("Purchase");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.PurchaseItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ProductPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("PurchaseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("PurchaseId");
+
+                    b.ToTable("PurchaseItem");
+                });
+
             modelBuilder.Entity("VapeShop.Domain.Identity.User", b =>
                 {
                     b.Property<int>("Id")
@@ -90,6 +254,20 @@ namespace VapeShop.Application.Migrations
                     b.ToTable("UserSettings");
                 });
 
+            modelBuilder.Entity("VapeShop.Domain.SystemSettings.SystemSetting", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SystemSetting");
+                });
+
             modelBuilder.Entity("VapeShop.Domain.VSProduct.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -136,35 +314,35 @@ namespace VapeShop.Application.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("NewPrice")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                        .HasPrecision(6, 4)
+                        .HasColumnType("decimal(6,4)");
 
-                    b.Property<int?>("ProductCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProductManufacturerId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductCategoryId", "ProductManufacturerId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("PriceChange");
                 });
 
             modelBuilder.Entity("VapeShop.Domain.VSProduct.Product", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("ManufacturerId")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Id")
+                    b.Property<int?>("ManufacturerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -175,12 +353,101 @@ namespace VapeShop.Application.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CategoryId", "ManufacturerId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("Id")
-                        .IsUnique();
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ManufacturerId");
 
                     b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Basket", b =>
+                {
+                    b.HasOne("VapeShop.Domain.Identity.User", "User")
+                        .WithOne("Basket")
+                        .HasForeignKey("VapeShop.Domain.ECommerce.Basket", "UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Feedback", b =>
+                {
+                    b.HasOne("VapeShop.Domain.VSProduct.Product", "Product")
+                        .WithMany("Feedbacks")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VapeShop.Domain.Identity.User", "User")
+                        .WithMany("Feedbacks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Payment", b =>
+                {
+                    b.HasOne("VapeShop.Domain.ECommerce.Purchase", "Purchase")
+                        .WithOne("Payment")
+                        .HasForeignKey("VapeShop.Domain.ECommerce.Payment", "PurchaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Purchase");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.ProductInBasket", b =>
+                {
+                    b.HasOne("VapeShop.Domain.ECommerce.Basket", "Basket")
+                        .WithMany("ProductInBasket")
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VapeShop.Domain.VSProduct.Product", "Product")
+                        .WithMany("Baskets")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Basket");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Purchase", b =>
+                {
+                    b.HasOne("VapeShop.Domain.Identity.User", "Users")
+                        .WithMany("Purchases")
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.PurchaseItem", b =>
+                {
+                    b.HasOne("VapeShop.Domain.VSProduct.Product", "Product")
+                        .WithMany("PurchaseItems")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VapeShop.Domain.ECommerce.Purchase", "Purchase")
+                        .WithMany("PurchaseItems")
+                        .HasForeignKey("PurchaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Purchase");
                 });
 
             modelBuilder.Entity("VapeShop.Domain.Identity.User", b =>
@@ -206,8 +473,10 @@ namespace VapeShop.Application.Migrations
             modelBuilder.Entity("VapeShop.Domain.VSProduct.PriceChange", b =>
                 {
                     b.HasOne("VapeShop.Domain.VSProduct.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductCategoryId", "ProductManufacturerId");
+                        .WithMany("PriceChanges")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Product");
                 });
@@ -216,27 +485,37 @@ namespace VapeShop.Application.Migrations
                 {
                     b.HasOne("VapeShop.Domain.VSProduct.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.HasOne("VapeShop.Domain.VSProduct.Manufacturer", "Manufacturer")
                         .WithMany("Products")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("VapeShop.Domain.VSProduct.PriceChange", "PriceChanges")
-                        .WithOne()
-                        .HasForeignKey("VapeShop.Domain.VSProduct.Product", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ManufacturerId");
 
                     b.Navigation("Category");
 
                     b.Navigation("Manufacturer");
+                });
 
-                    b.Navigation("PriceChanges");
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Basket", b =>
+                {
+                    b.Navigation("ProductInBasket");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.ECommerce.Purchase", b =>
+                {
+                    b.Navigation("Payment");
+
+                    b.Navigation("PurchaseItems");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.Identity.User", b =>
+                {
+                    b.Navigation("Basket")
+                        .IsRequired();
+
+                    b.Navigation("Feedbacks");
+
+                    b.Navigation("Purchases");
                 });
 
             modelBuilder.Entity("VapeShop.Domain.VSProduct.Category", b =>
@@ -247,6 +526,17 @@ namespace VapeShop.Application.Migrations
             modelBuilder.Entity("VapeShop.Domain.VSProduct.Manufacturer", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("VapeShop.Domain.VSProduct.Product", b =>
+                {
+                    b.Navigation("Baskets");
+
+                    b.Navigation("Feedbacks");
+
+                    b.Navigation("PriceChanges");
+
+                    b.Navigation("PurchaseItems");
                 });
 #pragma warning restore 612, 618
         }

@@ -9,10 +9,12 @@ using VapeShop.Domain.VSProduct;
 
 namespace VapeShop.Domain.ECommerce
 {
-    public class Purchase : IEntityWithOwnId
+    public class Purchase : Entity<int>
     {
+        
+        public virtual Payment? Payment { get; set; }
         public DateTime PurchaseDate { get; set; }
-        public virtual ICollection<PurchaseItem> PurchaseItems { get; set; } = new List<PurchaseItem>();
+        public virtual IEnumerable<PurchaseItem> PurchaseItems { get; set; } = new List<PurchaseItem>();
         public virtual User Users { get; set; } = null!;
     }
 }

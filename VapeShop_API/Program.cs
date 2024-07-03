@@ -1,4 +1,12 @@
 
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using VapeShop_BLL;
+using VapeShop_BLL.Contracts.Identity;
+using VapeShop_BLL.Contracts.VCProduct;
+using VapeShop_BLL.Services.Identity;
+using VapeShop_BLL.Services.VCProduct;
+
 namespace VapeShop_API
 {
     public class Program
@@ -13,11 +21,26 @@ namespace VapeShop_API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            
+            TestWebApiModule.AddServices(builder);
+            VapeShopBLL_ModuleHead.RegisterModule(builder.Services);
 
-            Startup.RegisterDal(builder);
-            Startup.AddSerilog(builder);
 
 
+
+
+
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+                options.SlidingExpiration = true;
+                options.AccessDeniedPath = "/Forbidden";
+                options.LogoutPath = "/Auth/Login";
+            });
+
+            builder.Services.AddScoped<Startup>();
+         
 
 
 
@@ -31,9 +54,22 @@ namespace VapeShop_API
                 app.UseSwaggerUI();
             }
 
+
+
+
+
+
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+            var cookiePolicyOptions = new CookiePolicyOptions
+            {
+                MinimumSameSitePolicy = SameSiteMode.Strict,
+            };
+
+            app.UseCookiePolicy(cookiePolicyOptions);
+
 
 
             app.MapControllers();

@@ -10,7 +10,7 @@ namespace VapeShop.Domain.VSProduct
     public class Category : Entity<int>
     {
 
-        public string Name { get; set; } = null! ;
-        public virtual ICollection<Product>? Products { get; set; } = new List<Product>();
+        public string Name { get; set; }
+        public virtual IEnumerable<Product>? Products { get; set; } = new List<Product>();
     }
 }

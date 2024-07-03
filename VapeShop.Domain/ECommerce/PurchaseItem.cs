@@ -10,7 +10,7 @@ namespace VapeShop.Domain.ECommerce
     public class PurchaseItem : Entity<int>
     {
   
-
+        
         public int ProductCount { get; set; }
 
         public decimal ProductPrice { get; set; }

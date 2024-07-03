@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace VapeShop_API.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    
+    [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

@@ -16,7 +16,7 @@ namespace VapeShop.Application
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<PriceChange>().Property(price => price.NewPrice).HasPrecision(18, 4);
+            modelBuilder.Entity<PriceChange>().Property(price => price.NewPrice).HasPrecision(6, 4);
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);

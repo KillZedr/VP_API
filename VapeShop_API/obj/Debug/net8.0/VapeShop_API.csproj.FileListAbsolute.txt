@@ -75,7 +75,6 @@ C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\Va
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\obj\Debug\net8.0\VapeShop_API.pdb
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\obj\Debug\net8.0\VapeShop_API.genruntimeconfig.cache
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\obj\Debug\net8.0\ref\VapeShop_API.dll
-C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\obj\Debug\net8.0\VapeShop_API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -142,3 +141,9 @@ C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\Va
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\VapeShop_BLL.dll
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\VapeShop_BLL.pdb
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+C:\Users\Илья\Desktop\ASP.Net  courses\homework\Homework1_SOLID\ISP_SOlID\VapeShop_API\VapeShop_API\obj\Debug\net8.0\VapeShop_API.MvcApplicationPartsAssemblyInfo.cs

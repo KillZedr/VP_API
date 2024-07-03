@@ -18,8 +18,4 @@
     <ProjectReference Include="..\VapeShop.Domain\VapeShop.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="VapeShop_DAL\EntityTypeConfigurations\ECommerce\" />
-  </ItemGroup>
-
 </Project>

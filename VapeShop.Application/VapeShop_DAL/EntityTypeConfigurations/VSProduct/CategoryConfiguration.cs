@@ -15,7 +15,7 @@ namespace VapeShop.Application.VapeShop_DAL.EntityTypeConfigurations.VSProduct
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasOne<Product>()
-               .WithOne(product => product.Category).HasForeignKey<Product>(product => product.Id);
+               .WithOne(product => product.Category);
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VapeShop.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3680ef440e01fab8a244d13db477895f8a0319a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a80535926ab5c2121f436c6150d8be147849ef07")]
 [assembly: System.Reflection.AssemblyProductAttribute("VapeShop.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VapeShop.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
